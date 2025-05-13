@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Greenify – Amplify Sustainability</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="leaf-container"></div>
+
+  <header>
+    <h1>🌱 Greenify</h1>
+    <p>Earn rewards for your eco-friendly lifestyle</p>
+  </header>
+
+  <nav class="hidden" id="navbar">
+    <ul>
+      <li onclick="showSection('dashboard')">Home</li>
+      <li onclick="showSection('about')">About</li>
+      <li onclick="showSection('profile')">Profile</li>
+    </ul>
+  </nav>
+
+  <main>
+    <div id="auth-section">
+      <div class="form-container" id="register-form">
+        <h2>Register</h2>
+        <input type="text" placeholder="Name" id="reg-name" />
+        <input type="email" placeholder="Email" id="reg-email" />
+        <input type="password" placeholder="Password" id="reg-pass" />
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <span onclick="toggleForm('login')">Login</span></p>
+      </div>
+
+      <div class="form-container hidden" id="login-form">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" id="login-email" />
+        <input type="password" placeholder="Password" id="login-pass" />
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <span onclick="toggleForm('register')">Register</span></p>
+      </div>
+    </div>
+
+    <div class="hidden" id="dashboard">
+      <h2>Welcome, <span id="user-name">User</span>! 🌿</h2>
+
+      <section class="task-section">
+        <h3>📷 Share Your Eco-Friendly Task</h3>
+        <input type="file" id="task-file" accept="image/*,video/*" />
+        <button onclick="uploadTask()">Upload Task</button>
+        <p id="upload-status"></p>
+      </section>
+
+      <section class="reward-section">
+        <h3>🎁 Your Rewards</h3>
+        <p>You’ve earned <span id="reward-points">0</span> Green Points</p>
+        <button onclick="redeem()">Redeem Now</button>
+      </section>
+    </div>
+
+    <div class="hidden" id="about">
+      <h2>📖 About Greenify</h2>
+      <p>Greenify rewards users for living sustainably. Perform eco-friendly tasks like recycling, planting trees, or using bicycles instead of cars. Upload proof of your action and earn points. Redeem these on platforms like Amazon, Swiggy, BookMyShow, and more!</p>
+    </div>
+
+    <div class="hidden" id="profile">
+      <h2>👤 Your Profile</h2>
+      <p>Total Green Points: <span id="profile-reward">0</span></p>
+      <h4>Your Uploaded Tasks:</h4>
+      <ul id="task-list"></ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Greenify. Make Earth Greener. 🌍</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
